@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: "gilroy";
+    color: white;
+}
+
+.inp, .qrbox{
+    box-shadow: 0px 0px 20px 2px black;
+}
+
+.he{
+    transition: all ease-in-out  .3s;    
+}
+
+.he:hover{
+    box-shadow: 0px 0px 20px 2px black;
+}
+
+.qr{
+    box-shadow: 0px 0px 20px 2px black;
+}
+
+@media (max-width:700px) {
+    .hero{
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+    .qr img{
+        width: 150px;
+        height: 150px;
+    }
+    .qrbox{
+        width: 250px;
+    }
+    .footer{
+        flex-direction: column;
+    }
+    .header{
+        top: 10px;
+        left: 10px ;
+        transform: translateX(0);
+        padding: 3px 8px;
+    }
+    .header h1{
+        font-size: 3vw;
+    }
+}
+
+@media (max-width:450px) {
+    .header h1{
+        font-size: 4.5vw;
+    }
+}
