@@ -7,7 +7,7 @@ function App() {
   const photoUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${URL}`;
 
   return (
-    <div className="hero h-screen overflow-scroll w-full  bg-[#070F2B] flex items-center justify-evenly">
+    <div className="hero h-dvh overflow-scroll w-full  bg-[#070F2B] flex items-center justify-evenly">
       <div className="h-[100px]"></div>
       <div className="header absolute top-10 left-[50%] translate-x-[-50%] font-bold text-2xl rounded border-[#535C91] border py-2 px-5">
         <h1 className="text-[20px]">Insane QR Generator</h1>
