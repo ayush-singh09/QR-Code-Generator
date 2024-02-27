@@ -4,7 +4,7 @@ function App() {
   const [text, setText] = useState("");
   const [URL, setURL] = useState("Be Happy");
 
-  const photoUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${URL}`;
+  const photoUrl = `https://api.qrserver.com/v1/create-qr-code/?size=1080x1080&data=${URL}`;
 
   const handleDownload = () => {
     fetch(photoUrl)
