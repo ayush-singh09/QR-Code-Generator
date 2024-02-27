@@ -6,6 +6,20 @@ function App() {
 
   const photoUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${URL}`;
 
+  const handleDownload = () => {
+    fetch(photoUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', `QR_${URL}.jpg`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+  };
+
   return (
     <div className="hero h-dvh overflow-scroll w-full  bg-[#070F2B] flex items-center justify-evenly">
       <div className="h-[100px]"></div>
@@ -43,11 +57,13 @@ function App() {
         <div className="qr h-fit w-fit p-3 rounded-md bg-[#535C91]">
           <img src={photoUrl} className={`h-[200px] w-[200px]`} alt="qr" />
         </div>
-        <button className="he bg-[#9290C3] w-full py-[6px] rounded-md">
+        <button onClick={()=>handleDownload()} className="he bg-[#9290C3] w-full py-[6px] rounded-md">
           Save Image
         </button>
       </div>
-<div className="h-[100px]"></div>
+
+
+      <div className="h-[100px]"></div>
       <div className="footer w-full text-center min-h-[60px] text-sm bg-[#070c1b] absolute bottom-0 left-0 flex justify-between items-center px-5">
         <h1>project made for learning purpose only 👻</h1>
         <h1>❤️ love from insane.</h1>
